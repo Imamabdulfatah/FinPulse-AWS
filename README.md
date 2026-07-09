@@ -15,22 +15,22 @@ In the modern financial ecosystem, institutions face the critical challenge of p
 
 ```mermaid
 graph TD
-    subgraph Data Generation
+    subgraph DataGen [Data Generation]
         A[Data Simulator]
     end
 
-    subgraph AWS Serverless Ingestion
+    subgraph Ingestion [AWS Serverless Ingestion]
         B(API Gateway)
         C{Lambda: Ingestion Handler}
     end
 
-    subgraph Speed Layer (Real-time)
+    subgraph SpeedLayer [Speed Layer - Real-time]
         D[Kinesis Data Stream]
         F{Lambda: Fraud Detector}
         G[(DynamoDB:<br/>HighRiskTransactions)]
     end
 
-    subgraph Batch Layer (Analytics)
+    subgraph BatchLayer [Batch Layer - Analytics]
         E[(Amazon S3:<br/>finpulse-raw-data)]
         H[ETL Batch Job<br/>Pandas]
         I[(PostgreSQL:<br/>finpulse_db)]
