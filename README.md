@@ -42,7 +42,7 @@ graph TD
     C -->|Asynchronous Stream| D
     C -->|Raw Data Archive| E
     D -->|Event Trigger| F
-    F -->|PutItem (Fraudulent Tx)| G
+    F -->|PutItem Fraudulent Tx| G
     E -->|Scheduled Extraction| H
     H -->|UPSERT Aggregations| I
     I -->|Data Source| J
